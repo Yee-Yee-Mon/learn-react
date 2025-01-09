@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
-import Image from './asset/burger.jpg'
+import { useState } from 'react';
 
+//hook - useStateHook
 function App() {
-  let name = "Yee Yee Mon"
+  //let name = "Yee Yee Mon";
+  let [name, setName]= useState("Yee Yee Mon") // return array [getter, setterFun]
+  //let [name, setName] array destructuring format
+
+  let changeName = () =>{
+
+    setName("Aung Aung")
+    console.log(name)
+  }
   return (
-    <div>
+    <div className="app">
       <h1>Hello {name}</h1>
-      {/* first way -public folder way */}
-      {/* <img src="/burger.jpg" alt="" ></img> */}
-
-      {/* 2nd way- Import */}
-      {/* <img src={Image} alt="" ></img> */}
-
-      {/* real world way */}
-      <img src={Image} alt="" ></img>
-
+      <button onClick={changeName}>change name</button>
     </div>
    
   );
 }
+
+// what is virtual DOM
+
 
 export default App;
