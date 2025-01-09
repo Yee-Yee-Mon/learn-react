@@ -37,10 +37,11 @@ function App() {
 
       <h1>Posts</h1>
       <ul>
-        {posts.map((post)=>(
+        {!!posts.length && posts.map((post)=>(
           // if you need to pass parameter to function you need to call function as function reference
            <li key={post.id}>{post.title} <span></span><button onClick={() => deletePost(post.id)}>delete</button></li>
         ))}
+        { !posts.length && <p>No Post Available</p>}
       </ul>
     </div>
    
