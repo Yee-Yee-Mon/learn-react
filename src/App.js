@@ -27,6 +27,9 @@ function App() {
     setName("Aung Aung")
     console.log(name)
   }
+  let deletePost = (id) =>{
+    setPosts((prevState) => prevState.filter(post => post.id != id))
+  }
   return (
     <div className="app">
       <h1>Hello {name}</h1>
@@ -35,7 +38,8 @@ function App() {
       <h1>Posts</h1>
       <ul>
         {posts.map((post)=>(
-           <li key={post.id}>{post.title}</li>
+          // if you need to pass parameter to function you need to call function as function reference
+           <li key={post.id}>{post.title} <span></span><button onClick={() => deletePost(post.id)}>delete</button></li>
         ))}
       </ul>
     </div>
