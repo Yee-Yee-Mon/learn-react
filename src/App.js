@@ -31,7 +31,7 @@ function App() {
     <> 
    <Navbar setShowModal={setShowModal} />
    <PostsList posts={posts}/>
-    {showModal &&<Modal >
+    {showModal &&<Modal>
     <h1>Terms and Conditions</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio impedit cumque eius fuga asperiores repellendus iusto amet cupiditate ad consequatur eligendi, molestias doloremque est perspiciatis et beatae at aliquam!</p>
     <button onClick={() =>setShowModal(false)}>close</button>
