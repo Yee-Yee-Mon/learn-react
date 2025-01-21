@@ -1,9 +1,9 @@
 import './App.css';
 import { useState } from 'react';
 import Navbar from './components/Navbar/index'
-import PostsList from './components/PostList/index';
-import Modal from './components/Modal/index';
-
+import Modal from './components/Modal'
+import PostsList from './components/PostList/index'
+import PostForm from './components/PostForm/index'
 //hook - useStateHook
 function App() {
   let [showModal, setShowModal] = useState()
@@ -13,29 +13,31 @@ function App() {
   let[posts, setPosts] = useState([
     {
       id : 1,
-      title : "first Post"
+      title : "first Post",
+      status : "blocked",
     },
     {
       id : 2,
-      title : "Second Post"
-    },
-    {
-      id : 3,
-      title : "Third Post"
+      title : "Second Post",
+      status : "upcoming",
     },
 
   ])
+
+  let addPost = (post)=>{
+    setPosts(prevState => [...prevState, post])
+    setShowModal(false)
+  }
   
   return (
     // react fragement
     <> 
    <Navbar setShowModal={setShowModal} />
    <PostsList posts={posts}/>
-    {showModal &&<Modal>
-    <h1>Terms and Conditions</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio impedit cumque eius fuga asperiores repellendus iusto amet cupiditate ad consequatur eligendi, molestias doloremque est perspiciatis et beatae at aliquam!</p>
-    <button onClick={() =>setShowModal(false)}>close</button>
-    </Modal>}
+    {showModal && 
+      <Modal setShowModal={setShowModal}> 
+        <PostForm addPost={addPost}/>
+      </Modal>}
     
    </>
   );

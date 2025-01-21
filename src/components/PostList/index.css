@@ -6,9 +6,8 @@
 }
 
 .postList .single-post {
-    flex: 1;
     margin: 20px;
-    width: 500px;
+    flex-basis: 350px;
     height: 300px;
     display: flex;
     justify-content: center;
@@ -16,4 +15,5 @@
     font-size: 20px;
     border: 3px solid gray;
     border-radius: 30px;
+    flex-direction: column;
 }

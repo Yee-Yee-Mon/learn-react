@@ -1,0 +1,31 @@
+.post-form .form-control{
+    margin: 20px;
+    
+}
+
+.post-form label {
+    margin-right: 20px;
+}
+
+.post-form input{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.post-form select{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.post-form button{
+    background-color: black;
+    width: 20%;
+    padding: 6px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 5px;
+}

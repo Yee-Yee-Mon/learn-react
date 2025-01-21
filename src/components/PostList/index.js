@@ -7,7 +7,10 @@ export default function PostsList({posts}) {
     <div className='postList container'>
         {
             posts.map(post=> (
-                <div className="single-post" key={post.id}>{post.title}</div>
+                <div className="single-post" key={post.id}>
+                  <h3>{post.title}</h3>
+                  <h4>{post.status}</h4>
+                </div>
             ))
         }        
     </div>
